@@ -16,4 +16,6 @@ We infer the effects of drivers on species based on matching rules from expert k
 
 - Shipping affects large surface-dwelling species such as marine mammals (Christiansen et al. 2013; Lesage et al. 2017);
 
-- Fisheries affects captured species. Species affected are identified with landing data from the Department of Fisheries and Ocean’s Canada (DFO 2016).
+- Fisheries affects captured species. Species affected are identified with landing data from the Department of Fisheries and Ocean’s Canada (DFO 2016). Score = 1 for targetted species, score = 0.75 for bycatch species.
+
+- For demersal-destructive fisheries, perhaps add something with mobility for species exposed to fisheries. But perhaps bycatch sort of takes this into consideration already...
