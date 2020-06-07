@@ -1,4 +1,4 @@
-# source('./Code/01-Mobility.R')
+# source('./Code/Traits/Mobility.R')
 # Invertebrate traits DB
 inv <- read.delim('./Data/InvertebratesTraits/BD_traits_20200416.csv', stringsAsFactors = F)
 invSp <- inv$Species

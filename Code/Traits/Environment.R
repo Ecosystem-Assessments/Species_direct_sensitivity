@@ -1,3 +1,4 @@
+# source('./Code/Traits/Environment.R')
 # Load species
 load('./Data/SpeciesList/SpeciesList.RData')
 nSp <- nrow(sp)
