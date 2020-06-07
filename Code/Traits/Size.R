@@ -1,4 +1,4 @@
-# source('./Code/02-Size.R')
+# source('./Code/Traits/Size.R')
 # Load species
 load('./Data/SpeciesList/SpeciesList.RData')
 nSp <- nrow(sp)
@@ -98,14 +98,11 @@ tr <- matrix(NA, nrow = length(nm), ncol = 1, dimnames = list(nm, 'Length'))
 # Teleost picture, Actinauge cristata, http://www.marinespecies.org/aphia.php?p=image&pic=44491
 tr['Actinauge sp.','Length'] <- 8
 
-#
-# tr["Actinostola sp.", 'Length'] <- NA
+# From image: './Data/TaxaImages/Actinostola_callosa.jpg'
+tr["Actinostola sp.", 'Length'] <- 10
 
-# c(21,31.5) http://www.marinespecies.org/aphia.php?p=taxdetails&id=118827#attributes
-# tr["Aega psora", 'Length'] <- 2.6
-
-#
-tr['Alcyonidium sp.','Length'] <- NA
+# From image: './Data/TaxaImages/Alcyonidium.jpg'
+tr['Alcyonidium sp.','Length'] <- 30
 
 # Ampelisca eschrichtii: 25mm; https://eol.org/pages/46521913
 # Ampelisca macrocephala; 14mm; https://eol.org/pages/46521922
@@ -132,8 +129,9 @@ tr['Argis dentata','Length'] <- 9
 # From image: http://www.marinespecies.org/carms/aphia.php?p=image&tid=160164&pic=29974
 tr['Arrhoges occidentalis','Length'] <- 4.5
 
-#
-tr['Ascidiacea','Length'] <- NA
+# Ascidia obliqua: 8; http://www.marinespecies.org/carms/aphia.php?p=taxdetails&id=103713#attributes
+# Ascidia prunu: 6; http://www.marinespecies.org/carms/aphia.php?p=taxdetails&id=103714#attributes
+tr['Ascidiacea','Length'] <- 7
 
 # From attributes: http://www.marinespecies.org/carms/aphia.php?p=taxdetails&id=158351#attributes
 # Max = c(100,150) mm
@@ -153,8 +151,13 @@ tr['Bolocera sp.','Length'] <- 12.5
 # Boreomysis tridens: c(26,30)mm; http://www.marinespecies.org/carms/aphia.php?p=taxdetails&id=119974#attributes
 tr['Boreomysis sp.','Length'] <- 2.8
 
-#
-tr['Bryozoa','Length'] <- NA
+# Size for this taxa is not really relevant because they are colonial species
+# The way size is used, however, it should not overly influence their
+# vulnerability since size is not considered (currently) to evaluate the
+# vulnerability of benthic taxa. We will therefore simply give them
+# approximately the median size of taxa in the St. Lawrence
+message('WARNING: Size for Bryozoa is the median of taxa size in this list, and thus uninformative. If size is ever considered to evaluate the vulnerability of benthic taxa to stressors, we should reevaluate this decision to properly evaluate the vulnerability of this taxa.')
+tr['Bryozoa','Length'] <- 20
 
 # http://www.marinespecies.org/carms/aphia.php?p=taxdetails&id=111230#attributes
 tr['Caberea ellisii','Length'] <- 2.5
@@ -193,20 +196,22 @@ tr['Echinarachnius parma','Length'] <- 5.2
 # http://www.marinespecies.org/carms/aphia.php?p=image&tid=102146&pic=31832
 tr['Epimeria loricata','Length'] <- 2
 
-#
-tr['Eualus fabricii','Length'] <- NA
+# From image: './Data/TaxaImages/Eualus_fabricii.jpg'
+tr['Eualus fabricii','Length'] <- 5
 
 # https://eol.org/pages/318684
 tr['Eualus gaimardii','Length'] <- 10
 
-#
-tr['Eualus macilentus','Length'] <- NA
+# From images:
+# './Data/TaxaImages/Eualus_macilentus.jpg'
+# './Data/TaxaImages/Eualus_macilentus2.jpg'
+tr['Eualus macilentus','Length'] <- 7
 
 # From image: http://www.marinespecies.org/aphia.php?p=image&tid=107125&pic=31829
 tr['Eusergestes arcticus','Length'] <- 7
 
-#
-tr['Eusirus cuspidatus','Length'] <- NA
+# From image: './Data/TaxaImages/Eusirus_cuspidatus.jpg'
+tr['Eusirus cuspidatus','Length'] <- 2.5
 
 # Cyclothone microdon: 7.6; https://eol.org/pages/46563201
 tr['Gonostomatidae','Length'] <- 7.6
@@ -293,8 +298,13 @@ tr['Pontophilus norvegicus','Length'] <- 7.5
 # From image description: http://www.marinespecies.org/aphia.php?p=image&tid=125170&pic=78863
 tr['Poraniomorpha sp.','Length'] <- 8
 
-#
-tr['Porifera','Length'] <- NA
+# Size for this taxa is not really relevant because they are colonial species
+# The way size is used, however, it should not overly influence their
+# vulnerability since size is not considered (currently) to evaluate the
+# vulnerability of benthic taxa. We will therefore simply give them
+# approximately the median size of taxa in the St. Lawrence
+message('WARNING: Size for Porifera is the median of taxa size in this list, and thus uninformative. If size is ever considered to evaluate the vulnerability of benthic taxa to stressors, we should reevaluate this decision to properly evaluate the vulnerability of this taxa.')
+tr['Porifera','Length'] <- 20
 
 # From image: http://www.marinespecies.org/carms/aphia.php?p=image&tid=123908&pic=32027
 tr['Psilaster andromeda','Length'] <- 10
@@ -305,11 +315,11 @@ tr['Reteporella grimaldii','Length'] <- 4
 # From image: http://www.marinespecies.org/aphia.php?p=image&tid=102224&pic=49824
 tr['Rhachotropis aculeata','Length'] <- 4
 
-#
-tr['Sabinea sarsii','Length'] <- NA
+# From image: './Data/TaxaImages/Sabinea_sarsii.png'
+tr['Sabinea sarsii','Length'] <- 8
 
-#
-tr['Sabinea septemcarinata','Length'] <- NA
+# From image: './Data/TaxaImages/Sabinea_septemcarinata.png'
+tr['Sabinea septemcarinata','Length'] <- 9
 
 # From image: http://www.marinespecies.org/carms/aphia.php?p=image&tid=107568&pic=31898
 tr['Sclerocrangon boreas','Length'] <- 6
@@ -375,6 +385,10 @@ tr['Wimvadocus torelli','Length'] <- 4
 
 # Add to dataset
 for(i in rownames(tr)) size[i, "Length"] <- tr[i, "Length"]
+
+# Keep only length
+size <- as.matrix(size[, 1])
+colnames(size) <- 'Size'
 
 # Export
 save(size, file = './Data/SpeciesTraits/Size.RData')

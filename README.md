@@ -19,3 +19,8 @@ We infer the effects of drivers on species based on matching rules from expert k
 - Fisheries affects captured species. Species affected are identified with landing data from the Department of Fisheries and Ocean’s Canada (DFO 2016). Score = 1 for targetted species, score = 0.75 for bycatch species.
 
 - For demersal-destructive fisheries, perhaps add something with mobility for species exposed to fisheries. But perhaps bycatch sort of takes this into consideration already...
+
+
+
+- The vulnerability of Zooplankton & Phytoplankton should also be characterized...
+- Maybe multiply the vulnerability values for environment and mobility traits, rather than take the max

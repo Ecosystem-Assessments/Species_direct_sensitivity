@@ -172,7 +172,6 @@ tr['Scomberesox saurus saurus', 'mobile'] <- 1
 tr['Sebastes sp.', 'mobile'] <- 1
 tr['Securiflustra securifrons', 'sessile'] <- 1
 tr['Sepioloidea sp.', 'mobile'] <- 1
-tr['Sergestes arcticus', 'mobile'] <- 1
 tr['Sergia robusta', 'mobile'] <- 1
 tr['Serrivomer beanii', 'mobile'] <- 1
 tr['Spirontocaris liljeborgii', 'mobile'] <- 1
