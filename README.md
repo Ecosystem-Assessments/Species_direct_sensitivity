@@ -24,3 +24,12 @@ We infer the effects of drivers on species based on matching rules from expert k
 
 - The vulnerability of Zooplankton & Phytoplankton should also be characterized...
 - Maybe multiply the vulnerability values for environment and mobility traits, rather than take the max
+
+
+- For this analysis, we do not include the following stressors:
+  - Sea level rise. This stressors is not relevant for the species we are assessing because we do not include coastal environments, as data is limited in those habitats.
+  - Aquaculture. This stressor is very localized in the St. Lawrence and we will not consider it in this analysis.
+  - Toxic algae. This stressor is hard to predict and does not occur spatially with much certainty or reccurence.
+  - Invasive species. This stressor is dependent on the type of invaders and the ecological community it invades.
+
+Acidification
