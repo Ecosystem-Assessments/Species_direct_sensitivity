@@ -424,7 +424,7 @@ body$composition <- body$composition %>%
                     gsub("Calcareous > Aragonite", "aragonite", .) %>%
                     gsub("calcium sulfate hemihydrate", "calcium_sulfate", .) %>%
                     gsub("Cartilaginous", "cartilaginous", .) %>%
-                    gsub("non-calcifying", "non-calcifying", .) %>%
+                    gsub("non-calcifying", "non_calcifying", .) %>%
                     gsub("Chitinous", "chitinous", .) %>%
                     gsub("calcium carbonate", "calcite", .) %>%
                     gsub("aragonite", "aragonite", .) %>%
@@ -444,7 +444,7 @@ body$body <- paste(body$structure, body$composition, sep = '_')
 # Simplify categories
 body$body <- body$body %>%
              gsub('solid_cartilaginous','cartilaginous',.) %>%
-             gsub('soft_non-calcifying','non-calcifying',.) %>%
+             gsub('soft_non_calcifying','non_calcifying',.) %>%
              gsub('solid_chitinous','chitinous',.) %>%
              gsub('solid_bone','bone',.) %>%
              gsub('solid_biogenic_silica','biogenic_silica',.)
