@@ -399,6 +399,129 @@ structure = 'tissue', composition = 'non-calcifying')
 comp[['Velutinidae']] <- data.frame(taxa = 'Velutinidae',
 structure = 'skeleton', composition = 'calcium carbonate')
 
+# =-=-=-=-=-=-=-=-=-=- Review these species -=-=-=-=-=-=-=-=-=-= #
+
+# https://eol.org/pages/46468382
+comp[["Anomia sp."]] <- data.frame(taxa = "Anomia sp.",
+structure = 'skeleton', composition = 'calcium carbonate')
+
+# https://eol.org/pages/46469215
+comp[["Arctica islandica"]] <- data.frame(taxa = "Arctica islandica",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46473532
+comp[["Cardium sp."]] <- data.frame(taxa = "Cardium sp.",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46473695
+comp[["Ciliatocardium ciliatum"]] <- data.frame(taxa = "Ciliatocardium ciliatum",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46468542
+comp[["Cyclocardia borealis"]] <- data.frame(taxa = "Cyclocardia borealis",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46473263/data
+comp[["Cyrtodaria siliqua"]] <- data.frame(taxa = "Cyrtodaria siliqua",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46473379/data
+comp[["Ensis leei"]] <- data.frame(taxa = "Ensis leei",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46473266/data
+comp[["Hiatella arctica"]] <- data.frame(taxa = "Hiatella arctica",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46474372
+# https://eol.org/pages/46474293/data
+comp[["Macoma sp."]] <- data.frame(taxa = "Macoma sp.",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46471958/data
+comp[["Mactromeris polynyma"]] <- data.frame(taxa = "Mactromeris polynyma",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46465297/data
+comp[["Megayoldia thraciaeformis"]] <- data.frame(taxa = "Megayoldia thraciaeformis",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46469524/data
+comp[["Mercenaria mercenaria"]] <- data.frame(taxa = "Mercenaria mercenaria",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46472118/data
+comp[["Mesodesma sp."]] <- data.frame(taxa = "Mesodesma sp.",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46470499
+comp[["Mya arenaria"]] <- data.frame(taxa = "Mya arenaria",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46470500/data
+comp[["Mya truncata"]] <- data.frame(taxa = "Mya truncata",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46465116
+comp[["Nuculana sp."]] <- data.frame(taxa = "Nuculana sp.",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46473272/data
+comp[["Panomya norvegica"]] <- data.frame(taxa = "Panomya norvegica",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46473768
+comp[["Parvicardium pinnulatum"]] <- data.frame(taxa = "Parvicardium pinnulatum",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46473702
+comp[["Serripes groenlandicus"]] <- data.frame(taxa = "Serripes groenlandicus",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46471945
+comp[["Spisula solidissima"]] <- data.frame(taxa = "Spisula solidissima",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46474253
+comp[["Tellina sp."]] <- data.frame(taxa = "Tellina sp.",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46470786/data
+comp[["Teredo navalis"]] <- data.frame(taxa = "Teredo navalis",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46470872
+comp[["Xylophaga atlantica"]] <- data.frame(taxa = "Xylophaga atlantica",
+structure = 'skeleton', composition = 'aragonite')
+
+# https://eol.org/pages/46465320
+comp[["Yoldia sp."]] <- data.frame(taxa = "Yoldia sp.",
+structure = 'skeleton', composition = 'aragonite')
+
+# Others
+# https://eol.org/pages/46549486
+comp[["Anthoptilum grandiflorum"]] <- data.frame(taxa = "Anthoptilum grandiflorum",
+structure = 'soft', composition = 'calcite')
+
+# https://eol.org/pages/46547902
+comp[["Drifa glomerata"]] <- data.frame(taxa = "Drifa glomerata",
+structure = 'soft', composition = 'calcite')
+
+# https://eol.org/pages/46547904
+comp[["Duva florida"]] <- data.frame(taxa = "Duva florida",
+structure = 'soft', composition = 'calcite')
+
+# https://eol.org/pages/46547909
+comp[["Gersemia rubiformis"]] <- data.frame(taxa = "Gersemia rubiformis",
+structure = 'soft', composition = 'calcite')
+
+# https://eol.org/pages/46549359
+comp[["Halipteris finmarchica"]] <- data.frame(taxa = "Halipteris finmarchica",
+structure = 'soft', composition = 'calcite')
+
+# https://eol.org/pages/46549372
+comp[["Pennatula aculeata"]] <- data.frame(taxa = "Pennatula aculeata",
+structure = 'soft', composition = 'calcite')
 
 
 # =-=-=-=-=-=-=-=-=-=- All data in single data.frame and format categories -=-=-=-=-=-=-=-=-=-= #
@@ -407,7 +530,7 @@ body <- bind_rows(comp)
 
 # Format structure categories
 # Will keep it only as solid or soft
-# WARNING: The difference between skeleton and exoskeleton would be important to consider
+message('WARNING: The difference between skeleton and exoskeleton would be important to consider')
 body$structure <- body$structure %>%
                   gsub("hydroskeleton","soft",.) %>%
                   gsub("tissue","soft",.) %>%
@@ -416,10 +539,9 @@ body$structure <- body$structure %>%
                   gsub("skeleton","solid",.)
 
 # Format composition categories
-message('WARNING: Calcareous is considered as calcite for simplicity. It may not be the case.')
 body$composition <- body$composition %>%
                     gsub("Calcareous > Amorphous calcium carbonate", "calcite", .) %>%
-                    gsub("Calcareous > High-magnesium calcite", "aragonite", .) %>%
+                    gsub("Calcareous > High-magnesium calcite", "high_magnesium", .) %>%
                     gsub("Calcareous > Calcite", "calcite", .) %>%
                     gsub("Calcareous > Aragonite", "aragonite", .) %>%
                     gsub("calcium sulfate hemihydrate", "calcium_sulfate", .) %>%
@@ -429,7 +551,6 @@ body$composition <- body$composition %>%
                     gsub("calcium carbonate", "calcite", .) %>%
                     gsub("aragonite", "aragonite", .) %>%
                     gsub("calcium phosphate", "calcium_phosphate", .) %>%
-                    gsub("Calcareous", "calcite", .) %>%
                     gsub("Bone", "bone", .) %>%
                     gsub("cartilaginous", "cartilaginous", .) %>%
                     gsub("biogenic silica", "biogenic_silica", .) %>%
