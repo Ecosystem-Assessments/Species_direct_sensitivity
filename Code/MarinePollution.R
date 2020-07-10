@@ -1,9 +1,11 @@
-# source('./Code/Vulnerability/MarinePollution.R')
+# source('./Code/MarinePollution.R')
 # Traits that we will take into account for all pollution types:
 #   - Feeding type
+#   - Mobility
 
 # Load trait data
 load('./Data/SpeciesTraits/FeedingType.RData')
+load('./Data/SpeciesTraits/Mobility.RData')
 
 # Vulnerability due to the feeding type (see Ellis et al. 2017)
 feed <- c(deposit     = 0.75,
@@ -16,14 +18,27 @@ feed <- c(deposit     = 0.75,
           suspension  = 1.00,
           xylophagous = 0.00)
 
+# Vulnerability due to taxa mobility
+mob <- c(sessile  = 1.00,
+         crawler  = 0.75,
+         swimmer  = 0.75,
+         burrower = 0.75,
+         mobile   = 0.00)
+
 # Integrate to traits db
 for(i in names(feed)) feeding[, i] <- feeding[, i] * feed[i]
+for(i in names(mob)) mobility[, i] <- mobility[, i] * mob[i]
 
 # For each taxa, select the maximum vulnerability of each trait
-vulnerability <- data.frame(feed = apply(feeding, 1, max))
+vulnerability <- data.frame(feed = apply(feeding, 1, max),
+                            mob = apply(mobility, 1, max))
+
+
+# Vulnerability
+marpol <- vulnerability$mob * vulnerability$feed
 
 # In matrix
-marpol <- matrix(data = vulnerability$feed,
+marpol <- matrix(data = marpol,
                 nrow = nrow(vulnerability), ncol = 1,
                 dimnames = list(rownames(vulnerability), c('MarinePollution')))
 

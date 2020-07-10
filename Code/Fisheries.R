@@ -1,4 +1,4 @@
-# source('./Code/Vulnerability/Fisheries.R')
+# source('./Code/Fisheries.R')
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #                                     LIBRARIES
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -188,6 +188,49 @@ for(i in 1:nrow(zif)) {
   cid <- zif$gearClass[i] == colnames(fisheries)
   fisheries[rid, cid] <- zif$vulnerability[i]
 }
+
+# Vulnerability for demersal destructive fisheries, a bit different.
+# 0.25 for all taxa not targetted or bycatch
+# Then consider mobility and environment
+uid0 <- fisheries[, 'FisheriesDD'] == 0
+dd <- fisheries[, 'FisheriesDD']
+dd[uid0] <- 0.25
+
+# Load trait data
+load('./Data/SpeciesTraits/Environment.RData')
+load('./Data/SpeciesTraits/Mobility.RData')
+
+# Vulnerability due to the environment
+env <- c(bathydemersal = 1.0,
+         bathypelagic  = 0.0,
+         benthic       = 1.0,
+         benthopelagic = 0.5,
+         demersal      = 1.0,
+         pelagic       = 0.0)
+
+# Vulnerability due to taxa mobility
+mob <- c(sessile  = 1.00,
+         crawler  = 0.75,
+         swimmer  = 0.75,
+         burrower = 0.75,
+         mobile   = 0.25)
+
+# Integrate to traits db
+for(i in names(env)) environment[, i] <- environment[, i] * env[i]
+for(i in names(mob)) mobility[, i] <- mobility[, i] * mob[i]
+
+# For each taxa, select the maximum vulnerability of each trait
+vulnerability <- data.frame(env = apply(environment, 1, max),
+                            mob = apply(mobility, 1, max))
+
+# Vulnerability
+vulnerability <- vulnerability$env * vulnerability$mob
+
+# Add to demersal destructive data
+dd[uid0] <- vulnerability[uid0]
+
+# Add to dataset
+fisheries[, 'FisheriesDD'] <- dd
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #                                  EXPORT DATA
