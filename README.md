@@ -31,5 +31,3 @@ We infer the effects of drivers on species based on matching rules from expert k
   - Aquaculture. This stressor is very localized in the St. Lawrence and we will not consider it in this analysis.
   - Toxic algae. This stressor is hard to predict and does not occur spatially with much certainty or reccurence.
   - Invasive species. This stressor is dependent on the type of invaders and the ecological community it invades.
-
-Acidification
