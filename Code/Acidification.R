@@ -12,7 +12,6 @@ load('./Data/SpeciesTraits/BodyComposition.RData')
 load('./Data/SpeciesTraits/Phylum.RData')
 load('./Data/SpeciesTraits/Environment.RData')
 
-
 # Vulnerability due to the environment
 env <- c(bathydemersal = 1.0,
          bathypelagic  = 0.0,
