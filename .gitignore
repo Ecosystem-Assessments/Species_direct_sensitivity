@@ -37,3 +37,7 @@ rsconnect/
 
 #iOS file
 .DS_Store
+fisheries_logbooks-f2109e69_gear.csv
+fisheries_logbooks-f2109e69_species.csv
+fisheries_logbooks-f2109e69_species_manual_modifs.csv
+fisheries_logbooks-f2109e69.csv

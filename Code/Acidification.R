@@ -37,11 +37,14 @@ bd <- c(biogenic_silica         = 0.0,
         soft_calcite            = 0.0,
         soft_calcium_phosphate  = 0.0,
         soft_calcium_sulfate    = 0.0,
+        soft_silica             = 0.0,
+        soft_high_magnesium     = 0.0,
         solid_aragonite         = 0.9,
         solid_calcite           = 0.8,
         solid_calcium_phosphate = 0.8,
         solid_high_magnesium    = 1.0,
-        solid_phosphatic        = 0.0)
+        solid_phosphatic        = 0.0,
+        solid_gorgonin          = 0.8)
 
 # Vulnerability using phylum as proxy  (Kroker et al. 2013)
 message('WARNING: Porifera are classified very broadly here and are considered tolerant to OA. However, there is likely a big tolerance difference between silicious and calcifying porifera. However, we do not capture it here.')
@@ -51,14 +54,25 @@ phy <- c(Annelida      = 0.0,
          Arthropoda    = 0.5,
          Brachiopoda   = 0.5,
          Bryozoa       = 1.0,
+         Chlorophyta   = 0.0,
          Chordata      = 0.0,
          Cnidaria      = 1.0,
          Ctenophora    = 0.0,
          Echinodermata = 1.0,
          Echiura       = 0.0,
          Mollusca      = 1.0,
+         Ochrophyta    = 0.0,
          Porifera      = 0.0,
-         Sipuncula     = 0.0)
+         Rhodophyta    = 0.0,
+         Sipuncula     = 0.0,
+         Tracheophyta  = 0.0)
+
+# Select only traits in db
+env <- env[names(env) %in% colnames(environment)]
+mob <- mob[names(mob) %in% colnames(mobility)]
+bd <- bd[names(bd) %in% colnames(body)]
+phy <- phy[names(phy) %in% colnames(phylum)]
+
 
 # Integrate to traits db
 for(i in names(env)) environment[, i] <- environment[, i] * env[i]
