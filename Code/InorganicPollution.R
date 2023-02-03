@@ -9,22 +9,27 @@ load('./Data/SpeciesTraits/FeedingType.RData')
 load('./Data/SpeciesTraits/Mobility.RData')
 
 # Vulnerability due to the feeding type (see Ellis et al. 2017)
-feed <- c(deposit     = 0.75,
-          filter      = 0.00,
-          grazer      = 0.00,
-          parasite    = 0.00,
-          plankton    = 0.00,
-          predator    = 0.00,
-          scavenger   = 0.50,
-          suspension  = 1.00,
-          xylophagous = 0.00)
+feed <- c(
+  deposit     = 0.75,
+  filter      = 0.00,
+  grazer      = 0.00,
+  parasite    = 0.00,
+  plankton    = 0.00,
+  predator    = 0.00,
+  scavenger   = 0.50,
+  suspension  = 1.00,
+  xylophagous = 0.00
+)
 
 # Vulnerability due to taxa mobility
-mob <- c(sessile  = 1.00,
-         crawler  = 0.75,
-         swimmer  = 0.75,
-         burrower = 0.75,
-         mobile   = 0.00)
+mob <- c(
+  sessile  = 1.00,
+  crawler  = 0.75,
+  swimmer  = 0.75,
+  burrower = 0.75,
+  mobile   = 0.00,
+  flying   = 0.00
+)
 
 
 # Integrate to traits db

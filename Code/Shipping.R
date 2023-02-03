@@ -13,7 +13,9 @@ env <- c(bathydemersal = 0.0,
          benthic       = 0.0,
          benthopelagic = 0.5,
          demersal      = 0.0,
-         pelagic       = 1.0)
+         pelagic       = 1.0,
+         coastal       = 0.5,
+         terrestrial   = 0.25)
 
 # Vulnerability due to size
 # For this iteration, we will consider that species vulnerability to marine

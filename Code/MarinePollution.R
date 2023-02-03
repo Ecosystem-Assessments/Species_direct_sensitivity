@@ -19,11 +19,14 @@ feed <- c(deposit     = 0.75,
           xylophagous = 0.00)
 
 # Vulnerability due to taxa mobility
-mob <- c(sessile  = 1.00,
-         crawler  = 0.75,
-         swimmer  = 0.75,
-         burrower = 0.75,
-         mobile   = 0.00)
+mob <- c(
+  sessile  = 1.00,
+  crawler  = 0.75,
+  swimmer  = 0.75,
+  burrower = 0.75,
+  mobile   = 0.00,
+  flying   = 0.00
+)
 
 # Integrate to traits db
 for(i in names(feed)) feeding[, i] <- feeding[, i] * feed[i]

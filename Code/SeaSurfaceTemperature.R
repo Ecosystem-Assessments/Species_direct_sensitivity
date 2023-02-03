@@ -18,14 +18,18 @@ env <- c(bathydemersal = 0.0,
          benthic       = 0.0,
          benthopelagic = 0.5,
          demersal      = 0.0,
-         pelagic       = 1.0)
+         pelagic       = 1.0,
+         coastal       = 0.5,
+         terrestrial   = 0.25)
 
 # Vulnerability due to taxa mobility
 mob <- c(sessile  = 1.00,
          crawler  = 0.75,
          swimmer  = 0.75,
          burrower = 0.75,
-         mobile   = 0.00)
+         mobile   = 0.00,
+         flying   = 0.00
+       )
 
 # Vulnerability due to the feeding type
 feed <- c(deposit     = 1.00,

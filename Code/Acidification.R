@@ -13,59 +13,70 @@ load('./Data/SpeciesTraits/Phylum.RData')
 load('./Data/SpeciesTraits/Environment.RData')
 
 # Vulnerability due to the environment
-env <- c(bathydemersal = 1.0,
-         bathypelagic  = 0.0,
-         benthic       = 1.0,
-         benthopelagic = 0.5,
-         demersal      = 1.0,
-         pelagic       = 0.0)
+env <- c(
+  bathydemersal = 1.0,
+  bathypelagic  = 0.0,
+  benthic       = 1.0,
+  benthopelagic = 0.5,
+  demersal      = 1.0,
+  pelagic       = 0.0,
+  coastal       = 0.0,
+  terrestrial   = 0.0
+)
 
 # Vulnerability due to taxa mobility, as a proxy of metabolism (Melzner et al. 2009)
-mob <- c(sessile  = 1.00,
-         crawler  = 0.75,
-         swimmer  = 0.75,
-         burrower = 0.75,
-         mobile   = 0.25)
+mob <- c(
+  sessile  = 1.00,
+  crawler  = 0.75,
+  swimmer  = 0.75,
+  burrower = 0.75,
+  mobile   = 0.25,
+  flying   = 0.00
+)
 
 # Vulnerability due to body composition
-bd <- c(biogenic_silica         = 0.0,
-        bone                    = 0.0,
-        cartilaginous           = 0.0,
-        chitinous               = 0.0,
-        non_calcifying          = 0.0,
-        soft_aragonite          = 0.0,
-        soft_calcite            = 0.0,
-        soft_calcium_phosphate  = 0.0,
-        soft_calcium_sulfate    = 0.0,
-        soft_silica             = 0.0,
-        soft_high_magnesium     = 0.0,
-        solid_aragonite         = 0.9,
-        solid_calcite           = 0.8,
-        solid_calcium_phosphate = 0.8,
-        solid_high_magnesium    = 1.0,
-        solid_phosphatic        = 0.0,
-        solid_gorgonin          = 0.8)
+bd <- c(
+  biogenic_silica         = 0.0,
+  bone                    = 0.0,
+  cartilaginous           = 0.0,
+  chitinous               = 0.0,
+  non_calcifying          = 0.0,
+  soft_aragonite          = 0.0,
+  soft_calcite            = 0.0,
+  soft_calcium_phosphate  = 0.0,
+  soft_calcium_sulfate    = 0.0,
+  soft_high_magnesium     = 0.0,
+  soft_silica             = 0.0,
+  solid_aragonite         = 0.9,
+  solid_calcite           = 0.8,
+  solid_calcium_phosphate = 0.8,
+  solid_high_magnesium    = 1.0,
+  solid_phosphatic        = 0.0,
+  solid_gorgonin          = 0.8
+)
 
 # Vulnerability using phylum as proxy  (Kroker et al. 2013)
 message('WARNING: Porifera are classified very broadly here and are considered tolerant to OA. However, there is likely a big tolerance difference between silicious and calcifying porifera. However, we do not capture it here.')
 message('WARNING: Calcifying annelida are sensitive, but we only have non-calcifying taxa in our list.')
 message('WARNING: For Cnidaria, it mostly depends on skeleton, so we will identify that phylum has highly sensitive and let the body composition trait decide fully determine vulnerability')
-phy <- c(Annelida      = 0.0,
-         Arthropoda    = 0.5,
-         Brachiopoda   = 0.5,
-         Bryozoa       = 1.0,
-         Chlorophyta   = 0.0,
-         Chordata      = 0.0,
-         Cnidaria      = 1.0,
-         Ctenophora    = 0.0,
-         Echinodermata = 1.0,
-         Echiura       = 0.0,
-         Mollusca      = 1.0,
-         Ochrophyta    = 0.0,
-         Porifera      = 0.0,
-         Rhodophyta    = 0.0,
-         Sipuncula     = 0.0,
-         Tracheophyta  = 0.0)
+phy <- c(
+  Annelida      = 0.0,
+  Arthropoda    = 0.5,
+  Brachiopoda   = 0.5,
+  Bryozoa       = 1.0,
+  Chlorophyta   = 0.0,
+  Chordata      = 0.0,
+  Cnidaria      = 1.0,
+  Ctenophora    = 0.0,
+  Echinodermata = 1.0,
+  Echiura       = 0.0,
+  Mollusca      = 1.0,
+  Ochrophyta    = 0.0,
+  Porifera      = 0.0,
+  Rhodophyta    = 0.0,
+  Sipuncula     = 0.0,
+  Tracheophyta  = 0.0
+)
 
 # Select only traits in db
 env <- env[names(env) %in% colnames(environment)]

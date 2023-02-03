@@ -8,11 +8,14 @@ load('./Data/SpeciesTraits/Mobility.RData')
 load('./Data/SpeciesTraits/Size.RData')
 
 # Vulnerability due to taxa mobility
-mob <- c(sessile  = 1.00,
-         crawler  = 0.75,
-         swimmer  = 0.75,
-         burrower = 0.75,
-         mobile   = 0.5)
+mob <- c(
+  sessile  = 1.00,
+  crawler  = 0.75,
+  swimmer  = 0.75,
+  burrower = 0.75,
+  mobile   = 0.50,
+  flying   = 0.25
+)
 
 # Vulnerability due to size
 # For this iteration, we will consider that species vulnerability to coastal
